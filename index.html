@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Prajwal Singh — The Builder</title>
+<meta name="description" content="IT Officer, Web Developer, and Builder. I design, build, and run digital systems.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">Prajwal<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    <a class="cta-btn" href="contact.html">Let's Build</a>
+    <button class="ham" id="ham" onclick="toggleMob()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="index.html" onclick="toggleMob()">Home</a>
+  <a href="resume.html" onclick="toggleMob()">Resume</a>
+  <a href="contact.html" onclick="toggleMob()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-chip">Available for new projects</div>
+  <h1 class="hero-name">
+    Prajwal Singh.<br>
+    <span class="green">The Builder.</span>
+  </h1>
+  <p class="hero-title">
+    I design, <span class="green" style="font-size:1.15em;text-shadow:0 0 12px rgba(53,187,120,0.7),0 0 24px rgba(53,187,120,0.4);">build</span>, and run digital systems.<br>
+    <strong>Websites, software, infrastructure — all of it.</strong>
+  </p>
+  <div class="hero-btns">
+    <a class="btn-g" href="#projects-anchor">
+      See My Work
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a class="btn-out" href="contact.html">Get in Touch</a>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- WHERE I WORK -->
+<section class="work-section">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Where I Work</div>
+    <h2 class="section-title">Institutions I am currently associated with</h2>
+    <p class="section-sub">Four organisations. Two countries. One person making sure everything runs.</p>
+  </div>
+  <div class="work-list">
+
+    <div class="work-item reveal" data-d="1">
+      <div class="work-item-head" onclick="toggleWork(this)">
+        <div class="wi-icon">🏥</div>
+        <div class="wi-info">
+          <h3>Nepalese Army Institute of Health Sciences (NAIHS)</h3>
+          <div class="wi-role">IT Officer · Head of IT Department</div>
+        </div>
+        <div class="wi-meta">
+          <span class="wi-badge ft">Full-time</span>
+          <span class="wi-chevron">▼</span>
+        </div>
+      </div>
+      <div class="work-item-body">
+        <div class="wi-period">📅 December 2025 – Present · Kathmandu, Nepal</div>
+        <ul class="wi-bullets">
+          <li>Head of IT across NAIHS, College of Medicine, NACHS, and Shree Birendra Hospital Chhauni</li>
+          <li>Oversee institutional IT infrastructure, networks, and cybersecurity</li>
+          <li>Administer Google Workspace — users, permissions, apps, and security</li>
+          <li>Monitor and troubleshoot network and system issues to keep operations running 24/7</li>
+          <li>Coordinate with vendors, ISPs, and external developers</li>
+          <li>Technical training for staff, IT documentation, asset tracking, and license management</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="work-item reveal" data-d="2">
+      <div class="work-item-head" onclick="toggleWork(this)">
+        <div class="wi-icon">🎓</div>
+        <div class="wi-info">
+          <h3>Nursing OSCE Training Centre (NOTC)</h3>
+          <div class="wi-role">Head of IT · Web Developer · Digital Marketing</div>
+        </div>
+        <div class="wi-meta">
+          <span class="wi-badge pt">Part-time · Remote</span>
+          <span class="wi-chevron">▼</span>
+        </div>
+      </div>
+      <div class="work-item-body">
+        <div class="wi-period">📅 May 2025 – Present · Australia (Remote)</div>
+        <ul class="wi-bullets">
+          <li>Manage the entire IT and digital marketing department for the Nursing OSCE Training Centre</li>
+          <li>Website development, maintenance, and database management</li>
+          <li>Digital marketing strategy and execution</li>
+        </ul>
+        <a href="https://notc.com.au" class="wi-link" target="_blank">Visit notc.com.au →</a>
+      </div>
+    </div>
+
+    <div class="work-item reveal" data-d="3">
+      <div class="work-item-head" onclick="toggleWork(this)">
+        <div class="wi-icon">🏛️</div>
+        <div class="wi-info">
+          <h3>College of Nursing Professionals Australia (CONPA)</h3>
+          <div class="wi-role">Head of IT · Web Developer · Digital Systems Manager</div>
+        </div>
+        <div class="wi-meta">
+          <span class="wi-badge pt">Part-time · Remote</span>
+          <span class="wi-chevron">▼</span>
+        </div>
+      </div>
+      <div class="work-item-body">
+        <div class="wi-period">📅 May 2025 – Present · Australia (Remote)</div>
+        <ul class="wi-bullets">
+          <li>Head of IT for CONPA and its parent group — full infrastructure and systems management</li>
+          <li>Website development and ongoing maintenance at conpa.edu.au</li>
+          <li>Digital systems management — tools, platforms, and internal processes</li>
+        </ul>
+        <a href="https://conpa.edu.au" class="wi-link" target="_blank">Visit conpa.edu.au →</a>
+      </div>
+    </div>
+
+    <div class="work-item reveal" data-d="4">
+      <div class="work-item-head" onclick="toggleWork(this)">
+        <div class="wi-icon">🏠</div>
+        <div class="wi-info">
+          <h3>Land &amp; Lease Realty</h3>
+          <div class="wi-role">Web Developer · Online Systems Admin</div>
+        </div>
+        <div class="wi-meta">
+          <span class="wi-badge pt">Part-time · Remote</span>
+          <span class="wi-chevron">▼</span>
+        </div>
+      </div>
+      <div class="work-item-body">
+        <div class="wi-period">📅 2025 – Present · Lakemba, Australia (Remote)</div>
+        <ul class="wi-bullets">
+          <li>WordPress and RealHomes theme management for landandlease.com.au</li>
+          <li>Regular content updates, performance optimisation, and property listing management</li>
+        </ul>
+        <a href="https://landandlease.com.au" class="wi-link" target="_blank">Visit landandlease.com.au →</a>
+      </div>
+    </div>
+
+    <div class="work-item reveal" data-d="5">
+      <div class="work-item-head" onclick="toggleWork(this)">
+        <div class="wi-icon">🚀</div>
+        <div class="wi-info">
+          <h3>GigsNepal</h3>
+          <div class="wi-role">Founder &amp; CEO</div>
+        </div>
+        <div class="wi-meta">
+          <span class="wi-badge pt">Startup</span>
+          <span class="wi-chevron">▼</span>
+        </div>
+      </div>
+      <div class="work-item-body">
+        <div class="wi-period">📅 2025 – Present · Kathmandu, Nepal</div>
+        <ul class="wi-bullets">
+          <li>Building Nepal's gig and labour marketplace — connecting skilled workers with clients</li>
+          <li>Solving trust, verification, and payment reliability for Nepal's informal freelance economy</li>
+          <li>Full product ownership: strategy, design, development, and operations</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects-anchor">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">What I've Built</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Products and platforms shipped solo — from idea to production.</p>
+  </div>
+  <div class="proj-grid">
+
+    <div class="proj-card reveal" data-d="1">
+      <div class="proj-top">
+        <div class="proj-emoji">🚀</div>
+        <span class="proj-tag wip">In Progress</span>
+      </div>
+      <h3>GigsNepal</h3>
+      <p>A gig and labour marketplace for Nepal — where trust is the hardest thing to build. Solving the verification and payment reliability problem that keeps Nepal's freelance economy informal.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">Full-stack</span>
+          <span class="proj-tech">Startup</span>
+        </div>
+        <div class="proj-links">
+          <a href="#" class="proj-link">Visit →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-d="2">
+      <div class="proj-top">
+        <div class="proj-emoji">🎓</div>
+        <span class="proj-tag wip">In Progress</span>
+      </div>
+      <h3>LMS for an Australian RTO</h3>
+      <p>A full-featured Learning Management System for a Registered Training Organisation in Australia. Course delivery, student progress tracking, assessment uploads, certification management, and instructor dashboards — all in one place.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">Web App</span>
+          <span class="proj-tech">EdTech</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-d="3">
+      <div class="proj-top">
+        <div class="proj-emoji">🗂️</div>
+        <span class="proj-tag wip">In Progress</span>
+      </div>
+      <h3>Student Management System</h3>
+      <p>A centralised SMS built for Australian nursing colleges — handling enrolments, student records, fee tracking, compliance reporting, and communication between students and administration. Less paperwork. Zero data loss.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">Web App</span>
+          <span class="proj-tech">SaaS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-d="1">
+      <div class="proj-top">
+        <div class="proj-emoji">🎯</div>
+        <span class="proj-tag delivered">Delivered</span>
+      </div>
+      <h3>QuizMaster Pro</h3>
+      <p>A live quiz control and audience display app built for institutional events. Real-time scoring, stage controller view, and a full-screen audience display. Built for NAIHS — available for any institution.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">Electron</span>
+          <span class="proj-tech">JavaScript</span>
+        </div>
+        <div class="proj-links">
+          <a href="contact.html" class="proj-link">Demo →</a>
+          <a href="contact.html" class="proj-link buy">Buy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-d="2">
+      <div class="proj-top">
+        <div class="proj-emoji">🌐</div>
+        <span class="proj-tag delivered">Delivered</span>
+      </div>
+      <h3>CONPA Website</h3>
+      <p>Official digital platform for College of Nursing Professionals Australia — course listings, admission information, and the full online presence of the institution.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">Web Dev</span>
+          <span class="proj-tech">CMS</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://conpa.edu.au" class="proj-link" target="_blank">Visit →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-d="3">
+      <div class="proj-top">
+        <div class="proj-emoji">🌐</div>
+        <span class="proj-tag delivered">Delivered</span>
+      </div>
+      <h3>NOTC Website</h3>
+      <p>The digital home of Nursing OSCE Training Centre — student-facing platform with course details, enrolment flows, and institutional communications.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">Web Dev</span>
+          <span class="proj-tech">Digital Marketing</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://notc.com.au" class="proj-link" target="_blank">Visit →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card reveal" data-d="4">
+      <div class="proj-top">
+        <div class="proj-emoji">🏡</div>
+        <span class="proj-tag delivered">Delivered</span>
+      </div>
+      <h3>Land &amp; Lease Realty Website</h3>
+      <p>WordPress-based real estate platform for a Lakemba agency — property listings, contact management, and client-facing content, running smooth and up to date.</p>
+      <div class="proj-footer">
+        <div class="proj-techs">
+          <span class="proj-tech">WordPress</span>
+          <span class="proj-tech">Real Estate</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://landandlease.com.au" class="proj-link" target="_blank">Visit →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p class="sf-copy">© 2026 Prajwal Singh · Built by Prajwal Singh</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="avatar.js"></script>
+</body>
+</html>
