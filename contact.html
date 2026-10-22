@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Contact — Prajwal Singh</title>
+<meta name="description" content="Get in touch with Prajwal Singh for web development, IT infrastructure, or any digital project.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">Prajwal<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    <a class="cta-btn" href="contact.html">Let's Build</a>
+    <button class="ham" id="ham" onclick="toggleMob()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="index.html" onclick="toggleMob()">Home</a>
+  <a href="resume.html" onclick="toggleMob()">Resume</a>
+  <a href="contact.html" onclick="toggleMob()">Contact</a>
+</div>
+
+<div class="contact-page">
+
+  <div class="contact-hero reveal">
+    <div class="section-eyebrow">Let's Build Something</div>
+    <h1>Connect with<br><span>The Builder.</span></h1>
+    <p class="hero-blurb">
+      Need a website, an app, custom software, or full IT infrastructure built from scratch?
+      I build it. And if the project is bigger than one person can handle,
+      <strong>I have a network of developers I trust</strong> — people I'd call at midnight and they'd pick up.
+      Any size. Any stack. We get it done.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="socials-list">
+        <a href="mailto:prajwalsingh196@gmail.com" class="social-item">
+          <div class="si-icon">📧</div>
+          prajwalsingh196@gmail.com
+        </a>
+        <a href="https://wa.me/9779862146485" class="social-item wa" target="_blank">
+          <div class="si-icon">💬</div>
+          WhatsApp — +977 986 2146485
+        </a>
+        <a href="https://github.com/prajwal196" class="social-item" target="_blank">
+          <div class="si-icon">🐙</div>
+          github.com/prajwal196
+        </a>
+        <a href="https://www.facebook.com/prajwalsingh196" class="social-item" target="_blank">
+          <div class="si-icon">📘</div>
+          facebook.com/prajwalsingh196
+        </a>
+        <a href="https://www.instagram.com/_prajwal_11_12" class="social-item" target="_blank">
+          <div class="si-icon">📸</div>
+          @_prajwal_11_12
+        </a>
+        <a href="https://www.chess.com/member/HokagePrajwal" class="social-item" target="_blank">
+          <div class="si-icon">♟️</div>
+          chess.com · HokagePrajwal
+        </a>
+      </div>
+      <div class="availability-badge">
+        <div class="av-dot"></div>
+        Available for freelance projects and consultations
+      </div>
+    </div>
+
+    <div class="c-form reveal" data-d="2">
+      <h3>Send a Message</h3>
+      <form id="cForm" onsubmit="sendMsg(event)" novalidate>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="cf-name">Your Name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Name" required autocomplete="name">
+          </div>
+          <div class="fg">
+            <label for="cf-email">Your Email</label>
+            <input id="cf-email" name="email" type="email" placeholder="email@example.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="cf-topic">What do you need?</label>
+          <select id="cf-topic" name="topic">
+            <option value="">Choose a topic</option>
+            <option>Website Development</option>
+            <option>IT Infrastructure / Support</option>
+            <option>Mobile App</option>
+            <option>Custom Software / Automation</option>
+            <option>AI Integration</option>
+            <option>QuizMaster Pro License</option>
+            <option>GigsNepal</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="cf-msg">Tell me about your project</label>
+          <textarea id="cf-msg" name="message" placeholder="Describe what you're building or what problem you need solved..." required></textarea>
+        </div>
+        <div class="f-err" id="fErr" hidden></div>
+        <button type="submit" class="f-sub" id="fBtn">
+          <span id="fBtnTxt">Send Message</span>
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="f-note">I usually reply within 24 hours.</p>
+      </form>
+      <div class="f-success" id="fSuccess" hidden>
+        <div class="f-success-icon">✅</div>
+        <h4>Message sent!</h4>
+        <p>Thanks for reaching out — I'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <p class="sf-copy">© 2026 Prajwal Singh</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="avatar.js"></script>
+<script>
+async function sendMsg(e) {
+  e.preventDefault();
+  const form   = document.getElementById('cForm');
+  const btn    = document.getElementById('fBtn');
+  const btnTxt = document.getElementById('fBtnTxt');
+  const errEl  = document.getElementById('fErr');
+  const ok     = document.getElementById('fSuccess');
+
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const topic   = document.getElementById('cf-topic').value.trim();
+  const message = document.getElementById('cf-msg').value.trim();
+
+  errEl.hidden = true;
+  if (!name || !email || !message) {
+    errEl.textContent = 'Please fill in your name, email and message.';
+    errEl.hidden = false; return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = 'Please enter a valid email address.';
+    errEl.hidden = false; return;
+  }
+
+  btn.disabled = true;
+  btnTxt.textContent = 'Sending…';
+
+  try {
+    const res  = await fetch('api/contact.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, topic: topic || 'Not specified', message }),
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      form.hidden = true;
+      ok.hidden   = false;
+    } else {
+      throw new Error(data.error || `Server error (${res.status})`);
+    }
+  } catch (err) {
+    errEl.textContent = err.message || 'Something went wrong. Email me directly: prajwalsingh196@gmail.com';
+    errEl.hidden = false;
+    btn.disabled = false;
+    btnTxt.textContent = 'Send Message';
+  }
+}
+</script>
+</body>
+</html>
