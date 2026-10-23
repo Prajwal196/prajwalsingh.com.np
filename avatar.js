@@ -25,6 +25,7 @@ const CSS = `
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: none;
   transform-style: preserve-3d;
   filter: drop-shadow(0 8px 24px rgba(0,0,0,.55)) drop-shadow(0 0 16px rgba(53,187,120,.35));
   will-change: transform;
@@ -1123,7 +1124,8 @@ function physicsLoop() {
     const dist = Math.hypot(dx, dy);
 
     if (dist > 2) {
-      const speed = Math.min(dist * 0.025, 3.5);
+      const maxSpd = isMobile() ? 1.2 : 3.5;
+      const speed = Math.min(dist * 0.025, maxSpd);
       px += (dx / dist) * speed;
       py += (dy / dist) * speed;
       updateFacing(px);
@@ -1188,8 +1190,10 @@ function startPhysics() {
 ════════════════════════════════════════════════ */
 function scheduleRoam() {
   clearTimeout(roamTimer);
-  // Vary pause: short pauses feel alive, long ones feel like thinking
-  const pause = 1400 + Math.random() * 2800;
+  // Mobile: longer pauses so avatar doesn't constantly dart around
+  const pause = isMobile()
+    ? 4000 + Math.random() * 5000
+    : 1400 + Math.random() * 2800;
   roamTimer = setTimeout(pickRoamTarget, pause);
 }
 
@@ -1285,6 +1289,7 @@ if (!rafId) rafId = requestAnimationFrame(physicsLoop);
 ════════════════════════════════════════════════ */
 let pointerDownT = 0, pointerDownX = 0, pointerDownY = 0;
 let lastMX = 0, lastMY = 0, lastMT = 0;
+let dragPointerId = null;
 
 /*
  * chatCloseCooldown: set to true when the close button is clicked.
@@ -1313,6 +1318,8 @@ closeBtn.addEventListener('click', e => {
 char.addEventListener('pointerdown', e => {
   if (chatCloseCooldown) { e.preventDefault(); return; }
   dragging = true;
+  dragPointerId = e.pointerId;
+  char.setPointerCapture && char.setPointerCapture(e.pointerId);
   roaming = false;
   clearTimeout(roamTimer);
   // Cancel dance if user grabs the avatar
@@ -1329,6 +1336,8 @@ char.addEventListener('pointerdown', e => {
 
 document.addEventListener('pointermove', e => {
   if (!dragging) return;
+  // On mobile, only track the pointer that started the drag
+  if (e.pointerId !== undefined && dragPointerId !== undefined && e.pointerId !== dragPointerId) return;
   const p = getP(e);
   const now = Date.now();
   const dt = Math.max(now - lastMT, 1);
@@ -1344,7 +1353,9 @@ document.addEventListener('pointermove', e => {
 
 document.addEventListener('pointerup', e => {
   if (!dragging) return;
+  if (e.pointerId !== undefined && dragPointerId !== null && e.pointerId !== dragPointerId) return;
   dragging = false;
+  dragPointerId = null;
   char.style.cursor = 'grab';
   movePupils(0, 0);
   if (chatCloseCooldown) return;  // close btn was just clicked — ignore this lift
